@@ -14,6 +14,12 @@
  * Source: https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/reviung41/boards/nice_nano.overlay
  * GitHub Issue: https://github.com/zmkfirmware/zmk/issues/885
  */
+ 
+&pwm0 {
+    status = "okay";
+    ch0-pin = <45>;
+    /* ch0-inverted; */
+};
 
 #include <dt-bindings/led/led.h>
 &spi1 {
