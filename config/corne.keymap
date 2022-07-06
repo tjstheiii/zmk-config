@@ -15,6 +15,17 @@
  * GitHub Issue: https://github.com/zmkfirmware/zmk/issues/885
  */
  
+ / {
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        label = "Backlight LEDs";
+        pwm_led_0 {
+            pwms = <&pwm0 45>;
+            label = "Backlight LED 0";
+        };
+    };
+};
+ 
 &pwm0 {
     status = "okay";
     ch0-pin = <45>;
@@ -49,7 +60,7 @@
 / {
 	chosen {
 		zmk,underglow = &led_strip;
-		zmk,backlight = &led_strip;
+		zmk,backlight = &backlight;
 	};
 };
 
