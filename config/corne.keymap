@@ -49,6 +49,7 @@
 / {
 	chosen {
 		zmk,underglow = &led_strip;
+		zmk,backlight = &led_strip;
 	};
 };
 
