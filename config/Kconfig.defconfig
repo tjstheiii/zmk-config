@@ -13,6 +13,16 @@ if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 config ZMK_SPLIT
 	default y
 
+if ZMK_BACKLIGHT
+
+config PWM
+    default y
+
+config LED_PWM
+    default y
+
+endif # ZMK_BACKLIGHT
+
 if ZMK_DISPLAY
 
 config I2C
