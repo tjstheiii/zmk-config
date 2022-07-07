@@ -15,6 +15,15 @@
 
 
 / {
+
+	chosen {
+		zephyr,display = &oled;
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+		zmk,backlight = &backlight;
+
+	};
+
     backlight: pwmleds {
         compatible = "pwm-leds";
         label = "Backlight LEDs";
@@ -33,13 +42,7 @@
 *        };
 *    };
 */
-	chosen {
-		zephyr,display = &oled;
-		zmk,kscan = &kscan0;
-		zmk,matrix_transform = &default_transform;
-		zmk,backlight = &backlight;
 
-	};
 
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
