@@ -55,7 +55,7 @@
 	};
 };
 
-&spi2: arduino_spi: spi@40023000 {
+&spi2 {
 			#address-cells = < 0x1 >;
 			#size-cells = < 0x0 >;
 			reg = < 0x40023000 0x1000 >;
