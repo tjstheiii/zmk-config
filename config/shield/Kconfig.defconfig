@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2020 Pete Johanson
  *
@@ -6,22 +7,31 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-/* &pwm0 {
-*    status = "okay";
-*    ch0-pin = <45>;
-*    /* ch0-inverted; */
-*/ };
+&pwm0 {
+    status = "okay";
+    ch0-pin = <45>;
+    /* ch0-inverted; */
+};
 
 
-/* / {
-*    backlight: pwmleds {
-*        compatible = "pwm-leds";
-*        label = "Backlight LEDs";
-*        pwm_led_0 {
-*            pwms = <&pwm0 45>;
-*            label = "Backlight LED 0";
-*        };
-*/    };
+/ {
+
+	chosen {
+		zephyr,display = &oled;
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+		zmk,backlight = &backlight;
+
+	};
+
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        label = "Backlight LEDs";
+        pwm_led_0 {
+            pwms = <&pwm0 45>;
+            label = "Backlight LED 0";
+        };
+    };
 /*
 *    backlight: gpioleds {
 *        compatible = "gpio-leds";
@@ -32,11 +42,7 @@
 *        };
 *    };
 */
-	chosen {
-		zephyr,display = &oled;
-		zmk,kscan = &kscan0;
-		zmk,matrix_transform = &default_transform;
-	};
+
 
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
