@@ -19,17 +19,6 @@
  * GitHub Issue: https://github.com/zmkfirmware/zmk/issues/885
  */
  
- / {
-    backlight: pwmleds {
-        compatible = "pwm-leds";
-        label = "Backlight LEDs";
-        pwm_led_0 {
-            pwms = <&pwm0 45>;
-            label = "Backlight LED 0";
-        };
-    };
-};
- 
 #include <dt-bindings/led/led.h>
 &spi1 {
 	compatible = "nordic,nrf-spim";
