@@ -46,11 +46,11 @@
 	};
 };
 
-&gpio0 {
-   status = "okay";
-   ch0-pin = <45>;
-   /* ch0-inverted; */
-};
+// &gpio0 {
+//    status = "okay";
+//    ch0-pin = <45>;
+//    /* ch0-inverted; */
+// };
 
 / {
 //      leds {
