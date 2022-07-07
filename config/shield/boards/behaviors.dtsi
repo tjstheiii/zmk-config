@@ -9,9 +9,9 @@
 /* &pwm0 {
 *    status = "okay";
 *    ch0-pin = <45>;
-*    /* ch0-inverted; */
-*/ };
-
+*    // ch0-inverted; //
+* };
+*/
 
 /* / {
 *    backlight: pwmleds {
@@ -21,7 +21,8 @@
 *            pwms = <&pwm0 45>;
 *            label = "Backlight LED 0";
 *        };
-*/    };
+    };
+*/
 /*
 *    backlight: gpioleds {
 *        compatible = "gpio-leds";
@@ -85,7 +86,7 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
 	};
 
 	// TODO: per-key RGB node(s)?
-};
+// };
 
 &pro_micro_i2c {
 	status = "okay";
