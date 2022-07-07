@@ -57,15 +57,15 @@
         compatible = "gpio-leds";
         label = "Backlight LEDs";
         gpio_led_0 {
-            gpios = <&pro_micro 20 GPIO_ACTIVE_LOW>;
+            gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
             label = "Backlight LED 0";
         };
         gpio_led_1 {
-            gpios = <&pro_micro 20 GPIO_ACTIVE_LOW>;
+            gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
             label = "Backlight LED 0";
         };
         gpio_led_2 {
-            gpios = <&pro_micro 20 GPIO_ACTIVE_LOW>;
+            gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
             label = "Backlight LED 0";
         };
     };
