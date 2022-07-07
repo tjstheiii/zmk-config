@@ -55,6 +55,29 @@
 	};
 };
 
+&spi2: arduino_spi: spi@40023000 {
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			reg = < 0x40023000 0x1000 >;
+			interrupts = < 0x23 0x1 >;
+			status = "okay";
+			label = "SPI_2";
+			compatible = "nordic,nrf-spim";
+			sck-pin = < 0x19 >;
+			mosi-pin = < 0x17 >;
+			miso-pin = < 0x18 >;
+			cs-gpios = < &arduino_header 0x10 0x1 >;
+			led_strip: ws2812@0 {
+				compatible = "worldsemi,ws2812-spi";
+				label = "WS2812";
+				reg = < 0x0 >;
+				spi-max-frequency = < 0x3d0900 >;
+				chain-length = < 0x10 >;
+				spi-one-frame = < 0x70 >;
+				spi-zero-frame = < 0x40 >;
+			};
+		};
+
 / {
 	chosen {
 		zmk,underglow = &led_strip;
