@@ -24,24 +24,25 @@
 
 	};
 
-    backlight: pwmleds {
-        compatible = "pwm-leds";
+/*    backlight: pwmleds {
+ *       compatible = "pwm-leds";
+ *       label = "Backlight LEDs";
+ *       pwm_led_0 {
+ *           pwms = <&pwm0 45>;
+ *           label = "Backlight LED 0";
+ *       };
+ *  };
+*/
+
+    backlight: gpioleds {
+        compatible = "gpio-leds";
         label = "Backlight LEDs";
-        pwm_led_0 {
-            pwms = <&pwm0 45>;
+        gpio_led_0 {
+            gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
             label = "Backlight LED 0";
         };
     };
-/*
-*    backlight: gpioleds {
-*        compatible = "gpio-leds";
-*        label = "Backlight LEDs";
-*        gpio_led_0 {
-*            gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
-*            label = "Backlight LED 0";
-*        };
-*    };
-*/
+
 
 
 	default_transform: keymap_transform_0 {
