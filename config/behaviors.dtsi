@@ -6,33 +6,6 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-/* &pwm0 {
-*    status = "okay";
-*    ch0-pin = <45>;
-*    // ch0-inverted; //
-* };
-*/
-
-/* / {
-*    backlight: pwmleds {
-*        compatible = "pwm-leds";
-*        label = "Backlight LEDs";
-*        pwm_led_0 {
-*            pwms = <&pwm0 45>;
-*            label = "Backlight LED 0";
-*        };
-    };
-*/
-/*
-*    backlight: gpioleds {
-*        compatible = "gpio-leds";
-*        label = "Backlight LEDs";
-*        gpio_led_0 {
-*            gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
-*            label = "Backlight LED 0";
-*        };
-*    };
-*/
 	chosen {
 		zephyr,display = &oled;
 		zmk,kscan = &kscan0;
