@@ -25,6 +25,9 @@ if ZMK_DISPLAY
 config I2C
 	default y
 
+config IL0323
+	default y
+
 config SSD1306
 	default y
 
